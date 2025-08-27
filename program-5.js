@@ -1,14 +1,10 @@
 // // Write a JavaScript program that creates a class called 'Shape' with a method to calculate the area. Create two subclasses, 'Circle' and 'Triangle', that inherit from the 'Shape' class and override the area calculation method. Create an instance of the 'Circle' class and calculate its area. Similarly, do the same for the 'Triangle' class.
 
 
-
+// Error 
 class Shape{
-    #area = 0;
-    constructor(width, height){
-        this.#area;
-    }
-    area(){
-
+    constructor(){
+        this.area = 0;
     }
 };
 
@@ -18,9 +14,9 @@ class Circle extends Shape{
         this.r = r;
     }
 
-    area(){
-        area = 2 * this.r * Math.PI;
-        console.log(`Area  : ${area}`);
+    shapeArea(){
+        this.area = (this.r * this.r * Math.PI).toFixed(2);
+        console.log(`Circle Area  : ${this.area}`);
     }
 };
 
@@ -30,44 +26,14 @@ class Triangle extends Shape{
         this.base = base;
         this.height = height;
     }
-    area(){
-        area = 1/2 * (this.base / this.height);
-        console.log(`Area  : ${area}`);
+    shapeArea(){
+        this.area = (1/2 * (this.base / this.height)).toFixed(2);
+        console.log(`Triangle Area  : ${this.area}`);
     }
 }
 
 const circle1 = new Circle(10);
-circle1.area();
+circle1.shapeArea();
 
 const triangle1 = new Triangle(10, 20);
-triangle1.area();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+triangle1.shapeArea();
